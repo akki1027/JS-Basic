@@ -89,16 +89,81 @@
   // console.log(min);
   // console.log(sec);
 
-  const scores = [10, 3, 9];
-  let sum = 0;
-  scores.forEach((score) => {
-    sum += score;
-  });
-  const avg = sum / scores.length;
-  console.log(avg); // 7.333333333333333
-  console.log(Math.floor(avg)); // 7
-  console.log(Math.ceil(avg)); // 8
-  console.log(Math.round(avg)); // 7
-  console.log(avg.toFixed(3)); // 7.333
-  console.log(Math.random());
+  // const scores = [10, 3, 9];
+  // let sum = 0;
+  // scores.forEach((score) => {
+  //   sum += score;
+  // });
+  // const avg = sum / scores.length;
+  // console.log(avg); // 7.333333333333333
+  // console.log(Math.floor(avg)); // 7
+  // console.log(Math.ceil(avg)); // 8
+  // console.log(Math.round(avg)); // 7
+  // console.log(avg.toFixed(3)); // 7.333
+  // console.log(Math.random());
+
+  // 0, 1, 2
+  // Math.floor(Math.random() * 3)
+  // 0, ..., n
+  // Math.floor(Math.random() * (n + 1))
+  // min, ..., max
+  // Math.floor(Math.random() * (max + 1 - min)) + min
+
+  // console.log(Math.floor(Math.random() * 6) + 1);
+
+  // const d = new Date();
+  // console.log(`${d.getMonth() + 1}月 ${d.getDate()}日`);
+  // const d = new Date(2020, 7 - 1, 16);
+  // d.setHours(12, 10, 20);
+  // // d.setDate(32);
+  // d.setDate(d.getDate() + 3);
+  // console.log(d);
+
+  // setInterval
+  // let i = 0;
+  // function showtime() {
+  //   console.log(new Date());
+  //   i++
+  //   if (i > 3) {
+  //     clearInterval(setIntervalId);
+  //   }
+  // }
+  // const setIntervalId = setInterval(showtime, 1000);
+
+  // 例外処理
+  // const name = 5;
+  // try {
+  //   console.log(name.toUpperCase());
+  // } catch (error) {
+  //   console.log(error);
+  // }
+  // console.log('Finished!');
+
+  class Post {
+    constructor(text) {
+      this.text = text;
+      this.likes = 0;
+    }
+
+    show() {
+      console.log(`${this.text} - ${this.likes}いいね`);
+    }
+
+    like() {
+      this.likes++;
+      this.show();
+    }
+    // 静的メソッド
+    static showInfo() {
+      console.log('Post class version 1');
+    }
+  }
+  const posts = [
+    new Post('JavaScriptを勉強中...'),
+    new Post('Rubyを勉強中...'),
+  ];
+  posts[0].show();
+  posts[0].like();
+  posts[1].show();
+  Post.showInfo();
 }
