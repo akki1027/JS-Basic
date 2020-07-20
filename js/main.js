@@ -139,31 +139,49 @@
   // }
   // console.log('Finished!');
 
-  class Post {
-    constructor(text) {
-      this.text = text;
-      this.likes = 0;
-    }
+  // class Post {
+  //   constructor(text) {
+  //     this.text = text;
+  //     this.likes = 0;
+  //   }
 
-    show() {
-      console.log(`${this.text} - ${this.likes}いいね`);
-    }
+  //   show() {
+  //     console.log(`${this.text} - ${this.likes}いいね`);
+  //   }
 
-    like() {
-      this.likes++;
-      this.show();
-    }
-    // 静的メソッド
-    static showInfo() {
-      console.log('Post class version 1');
-    }
-  }
-  const posts = [
-    new Post('JavaScriptを勉強中...'),
-    new Post('Rubyを勉強中...'),
-  ];
-  posts[0].show();
-  posts[0].like();
-  posts[1].show();
-  Post.showInfo();
+  //   like() {
+  //     this.likes++;
+  //     this.show();
+  //   }
+  //   // 静的メソッド
+  //   static showInfo() {
+  //     console.log('Post class version 1');
+  //   }
+  // }
+  // const posts = [
+  //   new Post('JavaScriptを勉強中...'),
+  //   new Post('Rubyを勉強中...'),
+  // ];
+  // posts[0].show();
+  // posts[0].like();
+  // posts[1].show();
+  // Post.showInfo();
+
+  document.getElementById('run0').addEventListener('click', () => {
+    const targetNode = document.getElementById('target');
+
+    // targetNode.textContent = 'Dotinstall';
+    targetNode.textContent = targetNode.dataset.translation;
+  });
+
+  document.getElementById('run1').addEventListener('click', () => {
+    const item0 = document.querySelectorAll('li')[0];
+    const copy = item0.cloneNode(true);
+    // trueにすると、中の要素（text）まで複製できる。
+    // falseにすると、からのli要素ができる。
+
+    const ul = document.querySelector('ul');
+    const item2 = document.querySelectorAll('li')[2];
+    ul.insertBefore(copy, item2);
+  });
 }
