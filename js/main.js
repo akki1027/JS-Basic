@@ -184,4 +184,14 @@
     const item2 = document.querySelectorAll('li')[2];
     ul.insertBefore(copy, item2);
   });
+
+  document.getElementById('submit').addEventListener('click', () => {
+    const li = document.createElement('li');
+    const text = document.querySelector('input');
+    li.textContent = text.value;
+
+    document.getElementById('show-text').appendChild(li);
+    text.value = ''
+    text.focus();
+  });
 }
